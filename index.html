@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Per Francesca</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6e6; /* Un rosa leggero */
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            position: relative;
+            width: 300px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #btnSi {
+            background-color: #ff4d6d;
+            color: white;
+            margin-right: 20px;
+        }
+
+        #btnNo {
+            background-color: #adb5bd;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Francesca! Vuoi fidanzarti con me?</h1>
+    <p>By Marco</p>
+
+    <div class="buttons">
+        <button id="btnSi" onclick="vittoria()">Sì</button>
+        <button id="btnNo" onmouseover="scappa()">No</button>
+    </div>
+
+    <script>
+        function scappa() {
+            const btnNo = document.getElementById('btnNo');
+            
+            // Calcola posizioni casuali all'interno della finestra
+            const x = Math.random() * (window.innerWidth - btnNo.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btnNo.offsetHeight);
+            
+            // Applica la nuova posizione
+            btnNo.style.position = 'fixed';
+            btnNo.style.left = x + 'px';
+            btnNo.style.top = y + 'px';
+        }
+
+        function vittoria() {
+            alert("Sapevo che avresti detto di sì! ❤️");
+            // Qui potresti reindirizzarla a una foto vostra o a una canzone
+        }
+    </script>
+
+</body>
+</html>
